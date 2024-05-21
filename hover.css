@@ -1,0 +1,551 @@
+/* sec1 blur effect */
+.cardd-container {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border-radius: 10px;
+    margin: auto;
+  }
+  
+  .cardd-container::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,0.4);
+    transform: translate3d(0, 0, 0) scale(0.95);
+    filter: blur(20px);
+  }
+  
+  .cardd {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    overflow: hidden;
+  }
+  
+  .cardd .img-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+background-color: rgba(0,0,0,0.3);
+    transition: scale 0.6s, rotate 0.6s, filter 1s;
+  }
+  
+  .cardd .img-content svg {
+    width: 50px;
+    height: 50px;
+    fill: #212121;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .cardd .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    color: #e8e8e8;
+    padding: 20px 24px;
+    line-height: 1.5;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(50px);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .cardd .content .heading {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  
+  .cardd:hover .content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .cardd:hover .img-content {
+    scale: 2.5;
+    rotate: 30deg;
+    filter: blur(7px);
+  }
+  
+  .cardd:hover .img-content svg {
+    fill: transparent;
+  }
+  
+  /* sec2  book*/
+  .book {
+    position: relative;
+    border-radius: 10px;
+    width: 280px;
+    height: 300px;
+    background-color: whitesmoke;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #00000056;
+    -webkit-transform: preserve-3d;
+    -ms-transform: preserve-3d;
+    transform: preserve-3d;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #000;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  
+  .cover {
+    top: 0;
+    position: absolute;
+    background-color: lightgray;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform-origin: 0;
+    -ms-transform-origin: 0;
+    transform-origin: 0;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #0000005b;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  
+  .book:hover .cover {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotatey(-80deg);
+    -ms-transform: rotatey(-100deg);
+    transform: rotatey(-100deg);
+  }
+  .radius1
+  {
+    border-radius: 10px!important;
+  }
+
+/* sec3  turn*/
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    font-family: sans-serif;
+    margin: 0 auto;
+  }
+  
+  .title {
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+  }
+ 
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    cursor: pointer;
+  }
+  
+  .flip-card-front, .flip-card-back {
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+  }
+  
+  .flip-card-front {
+  
+       background-color: rgba(0, 0, 0, 0.093);
+    color: rgb(255, 255, 255);
+  }
+  
+  .flip-card-back {
+  
+    transform: rotateY(180deg);
+    background: #080808cc!important;
+    text-align: center !important;
+  }
+  .radius
+  {
+    border-radius: 1rem;
+  }
+  
+  /* sec4 fill blur*/
+
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; 
+    box-sizing: border-box;
+}
+
+.box-area{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.box {
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    width: 280px;
+    height: 300px;
+    margin:0 auto;
+}
+.box img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+.overlay {
+	width: 100%;
+	height: 0;
+	background: linear-gradient(transparent,#000000a7 58%);
+	border-radius: 10px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	font-size: 14px;
+	transition: height 0.5s;
+}
+.overlay h3 {
+	font-weight: 500;
+	margin-bottom: 5px;
+	margin-top: 80%;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 30px;
+	letter-spacing: 2px;
+}
+.overlay a {
+	margin-top: 10px;
+	color: #484848;
+	text-decoration: none;
+	font-size: 14px;
+	background: #fff;
+	border-radius: 50px;
+	text-align: center;
+	padding: 5px 15px;
+}
+.box:hover img{
+    transform: scale(1.1);
+}
+.box:hover .overlay{
+    height: 100%;
+    color: white;
+}
+
+/* sec5 overlay */
+.imgtxt
+{
+    top: 100%;
+ width: 100%;
+    background-color: rgba(0, 0, 0, 0.636);
+    transition: .5s all linear;
+    text-align: center;
+}
+.cardd1
+{
+    width: 280px;
+    height: 300px;
+    border-radius: 50%;
+}
+.cardd1 img
+{
+    border-radius: 50%;
+}
+.cardd1:hover .imgtxt
+{
+  cursor: pointer;
+    bottom:0;
+    top: 0;
+}
+.colr1
+{
+    color:#393c5b!important;
+}
+/* testimonial */
+.testimonial .testimonial-wrapper
+{
+    box-shadow: 0px 0px 0px 10px  rgba(0, 0, 0, 0.2);
+
+    background-color: var(--bg-white);
+    margin: auto;
+    padding: 1rem 5rem;
+    border:  .2px solid gainsboro;
+}
+.than
+{
+  color: red!important;
+  font-size: 30px;
+}
+/* Glass */
+.contain22
+{
+  width: 100%;
+  height: 100%;
+  background-image: url(back.png);
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card22
+{
+  width: 90%;
+  max-width: 440px;
+  color: #fff;
+  text-align: center;
+  padding: 50px 35px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background:rgba(255, 255, 255, 0.2); 
+  border-radius: 16px;
+  box-shadow: 0 4px 30px  rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+.card22 img
+{
+  width: 140px;
+  border-radius: 50%;
+}
+.card22 h2{
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+.card22 p
+{
+  margin-top:10px auto ;
+  font-size: 18px;
+  max-width: 330px;
+}
+.card22 .linkes img
+{
+  width: 40px;
+  border-radius: 50%;
+  margin-top: 10px 5px;
+  transition: background 0.5s;
+}
+.card22 .linkes img:hover
+{
+  background: #ff01cf;
+}
+.btn-yash
+{
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+  background: #fff;
+ color: #ff01cf;
+ padding: 10px 30px;
+ border-radius: 30px;
+ margin: 30px 0 10px;
+}
+
+
+/* sec3  turn*/
+.flip
+{
+  width: 300px!important;
+  height: 400px!important;
+}
+.flipgap
+{
+  gap: 30px!important;
+}
+.flip-card {
+  background-color: transparent;
+  width: 300px!important;
+  height: 400px!important;
+  perspective: 1000px;
+  font-family: sans-serif;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+
+.flip-card-front, .flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+}
+
+.flip-card-front {
+
+     background-color: rgba(0, 0, 0, 0.093);
+  color: rgb(255, 255, 255);
+}
+
+.flip-card-back {
+
+  transform: rotateY(180deg);
+  background: #080808cc!important;
+  text-align: center !important;
+}
+.radius
+{
+  border-radius: 1rem;
+}
+
+/* sec1 blur effect */
+.flip1
+{
+  width: 300px!important;
+  height: 400px!important;
+}
+.cardd-container {
+  width: 300px;
+  height: 600px;
+  position: relative;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.cardd-container::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.4);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.cardd {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.cardd .img-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+background-color: rgba(0,0,0,0.3);
+  transition: scale 0.6s, rotate 0.6s, filter 1s;
+}
+
+.cardd .img-content svg {
+  width: 50px;
+  height: 50px;
+  fill: #212121;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.cardd .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  color: #e8e8e8;
+  padding: 20px 24px;
+  line-height: 1.5;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(50px);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.cardd .content .heading {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.cardd:hover .content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cardd:hover .img-content {
+  scale: 2.5;
+  rotate: 30deg;
+  filter: blur(7px);
+}
+
+.cardd:hover .img-content svg {
+  fill: transparent;
+}
